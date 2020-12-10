@@ -1,0 +1,366 @@
+print('''                              CONFIRMATION SHEET''')
+a='''WELCOME
+TO
+  MYSHOW'''
+a1='''SELECT
+YOUR
+CITY'''
+a2='''SELECT YOUR
+LANGUAGE'''
+z=["DOLITLLE","KNIVES OUT","1917","BAD BOYS FOR LIFE","JUMANI:THE NEXT LEVEL","THE GENTLEMEN","STREET DANCER","CHHAPAAK","JAWANI JANEMANN","GOOD NEWWS","PANGA","TANHAJI:THE UNSUNG WARRIOR"]
+z1=["Ah2G3","8uL70f","R8hj90","7hD3xX","M7n0S45"]
+z3=["9:45 AM OR 6:00 PM HALL:- 1","10:30 AM OR 4:30 PM HALL:- 2","11:00 AM OR 5:15 PM HALL:- 3","11:45 AM OR 6:15 PM HALL:- 4","12:15 AM OR 7:00 PM HALL:- 5","1:30 PM OR 7:30 PM HALL:- 6","9:45 AM OR 6:00 PM HALL:- 6","10:30 AM OR 4:30 PM HALL:- 5","11:00 AM OR 5:15 PM HALL:- 4","11:45 AM OR 6:15 PM HALL:- 3","12:15 AM OR 7:00 PM HALL:- 2","1:30 PM OR 7:30 PM HALL:- 1"]
+import random
+
+'''
+import mysql.connector
+'''
+
+k=random.randint(0,4)
+import tkinter
+import tkinter.font as f
+import tkinter.ttk
+from tkinter import messagebox
+root=tkinter.Tk()
+fo=f.Font(family="times new roman",weight="bold",slant="italic",underline="1",size=25)
+f1=f.Font(family="times new roman",weight="bold",underline="1",size=18)
+f2=f.Font(family="times new roman",weight="bold",underline="1",size=10)
+f3=f.Font(family="times new roman",weight="bold",size=10)
+root.configure(background="pink")
+root.geometry("300x300+120+120")
+l=tkinter.Label(root,text=a,bg="blue",font=fo)
+l.place(x=55,y=60)
+def o():
+    t=tkinter.Toplevel()
+    t.title("MYSHOW CITY")
+    t.geometry("300x300+120+120")
+    t.configure(background="yellow")
+    l=tkinter.Label(t,text=a1,bg="red",font=fo)
+    l.place(x=85,y=40)
+    v=["DELHI","MUMBAI","KOLKATA","AHMEDABAD","CHENNAI","JAIPUR","BHOPAL","SHIMLA","SILCHAR","GOA","PUNE","BANGALORE","HYDERABAD"]
+    c=tkinter.ttk.Combobox(t,values=v)
+    c.set("DELHI")
+    c.place(x=80,y=200)
+    def o1():
+         global w
+         w=c.get()
+         print("\n          CITY:",w)
+         t1=tkinter.Toplevel()
+         t1.title("MYSHOW CITY")
+         t1.geometry("300x300+120+120")
+         t1.configure(background="orange")
+         l2=tkinter.Label(t1,text=a2,bg="brown",font=fo)
+         l2.place(x=37,y=40)
+         def o2():
+              t2=tkinter.Toplevel()
+              t2.title("MYSHOW CITY")
+              t2.geometry("600x500+120+120")
+              t2.configure(background="yellow")
+              l3=tkinter.Label(t2,text="ENGLISH MOVIES",bg="blue",font=fo)
+              l3.place(x=170,y=40)
+              global i
+              i=tkinter.IntVar()
+              r=tkinter.Radiobutton(t2,text="DOLITTLE\n(4 STARS)",value=0,variable=i,bg="yellow",font=f2)
+              r1=tkinter.Radiobutton(t2,text="KNIVES\nOUT\n(3.5 STARS)" ,value=1,variable=i,bg="yellow",font=f2)
+              r2=tkinter.Radiobutton(t2,text="1917\n(3D,4 STARS)" ,value=2,variable=i,bg="yellow",font=f2)
+              r3=tkinter.Radiobutton(t2,text="BAD BOYS\nFOR LIFE\n(3D,3.5 STARS)" ,value=3,variable=i,bg="yellow",font=f2)
+              r4=tkinter.Radiobutton(t2,text="JUMANI:\nTHE NEXT\nLEVEL\n(3D,4 STARS)" ,value=4,variable=i,bg="yellow",font=f2)
+              r5=tkinter.Radiobutton(t2,text="THE\nGENTLEMEN\n(4 STARS)" ,value=5,variable=i,bg="yellow",font=f2)
+              r.place(x=50,y=180)
+              r1.place(x=270,y=180)
+              r2.place(x=470,y=180)
+              r3.place(x=50,y=350)
+              r4.place(x=270,y=350)
+              r5.place(x=470,y=350)
+              def o3():
+                  global s
+                  s=i.get()
+                  print('''          MOVIE:''',z[s])
+                  t3=tkinter.Toplevel()
+                  t3.title("MYSHOW SEATS")
+                  t3.geometry("300x300+120+120")
+                  t3.configure(background="orange")
+                  l4=tkinter.Label(t3,text="NUMBER OF \nSEATS",bg="purple",font=fo)
+                  l4.place(x=45,y=40)
+                  v1=[1,2,3,4,5,6,7,8,9,10]
+                  c1=tkinter.ttk.Combobox(t3,values=v1)
+                  c1.set("1")
+                  c1.place(x=80,y=200)
+                  def o4():
+                      global q
+                      global g
+                      g=int(c1.get())
+                      q=300*g
+                      print('''          NUMBER OF SEATS:''',c1.get())
+                      print('''          PRICE OF ONE TICKET: 300 rupees''')
+                      print('''          TOTAL PRICE: 300 x (NUMBER OF SEATS) :''',q,"rupees")
+                      t4=tkinter.Toplevel()
+                      t4.title("MYSHOW SEATS")
+                      t4.geometry("600x500+120+120")
+                      t4.configure(background="red")
+                      l5=tkinter.Label(t4,text="CUSTOMER'S\nINFORMATION",bg="orange",font=fo)
+                      l5.place(x=170,y=40)
+                      l6=tkinter.Label(t4,text="NAME:",bg="red",font=f2)
+                      l6.place(x=70,y=150)
+                      e=tkinter.Entry(t4,border=5)
+                      e.place(x=115,y=150)
+                      l7=tkinter.Label(t4,text="ADDRESS:",bg="red",font=f2)
+                      l7.place(x=375,y=150)
+                      e1=tkinter.Entry(t4,border=5)
+                      e1.place(x=445,y=150)
+                      l8=tkinter.Label(t4,text="MOBILE\nNUMBER:",bg="red",font=f2)
+                      l8.place(x=50,y=220)
+                      e2=tkinter.Entry(t4,border=5)
+                      e2.place(x=115,y=225)
+                      l9=tkinter.Label(t4,text="EMAIL\nADDRESS:",bg="red",font=f2)
+                      l9.place(x=45,y=295)
+                      e3=tkinter.Entry(t4,border=5)
+                      e3.place(x=115,y=300)
+                      l10=tkinter.Label(t4,text="AGE:",bg="red",font=f2)
+                      l10.place(x=75,y=375)
+                      e4=tkinter.Entry(t4,border=5)
+                      e4.place(x=115,y=375)
+                      l11=tkinter.Label(t4,text="GENDER:",bg="red",font=f2)
+                      l11.place(x=380,y=225)
+                      e5=tkinter.Entry(t4,border=5)
+                      e5.place(x=445,y=225)
+                      l12=tkinter.Label(t4,text="COUPON:",bg="red",font=f2)
+                      l12.place(x=380,y=300)
+                      e6=tkinter.Entry(t4,border=5)
+                      e6.place(x=445,y=300)
+                      l13=tkinter.Label(t4,text="VERIFICATION:",bg="red",font=f2)
+                      l13.place(x=347,y=375)
+                      e7=tkinter.Entry(t4,border=5)
+                      e7.place(x=445,y=375)
+                      l14=tkinter.Label(t4,text=z1[k],bg="blue",font=f3)
+                      l14.place(x=490,y=410)
+                      l16=tkinter.Label(t4,text="ALL FIELDS ARE COMPULSORY",bg="yellow",font=f2)
+                      l16.place(x=90,y=450)
+                      def o5():
+                          s1=e7.get()
+                          global s2
+                          s2=e6.get()
+                          if(s1!=z1[k]):
+                              messagebox.showwarning("WARNING","PLEASE CHECK THE VERIFICATION")
+                              root.withdraw()
+                          else:
+                              global x1
+                              global x2
+                              global x3
+                              global x4
+                              global x5
+                              global x6
+                              x1=e.get()
+                              x2=e1.get()
+                              x3=e2.get()
+                              x4=e3.get()
+                              x5=e4.get()
+                              x6=e5.get()
+                              print('''          NAME:''',e.get())
+                              print('''          ADDRESS:''',e1.get())
+                              print('''          MOBILE NUMBER:''',e2.get())
+                              print('''          EMAIL ADDRESS:''',e3.get())
+                              print('''          AGE:''',e4.get())
+                              print('''          GENDER:''',e5.get())
+                              print('''          COUPON:''',e6.get())
+                              root.destroy()
+                              
+                      b6=tkinter.Button(t4,text="NEXT",bg="orange",command=o5)
+                      b6.place(x=530,y=450)
+                      
+                      
+                      
+                  b5=tkinter.Button(t3,text="NEXT",bg="purple",command=o4)
+                  b5.place(x=250,y=250)
+                  
+                  
+                  
+              b4=tkinter.Button(t2,text="NEXT",bg="blue",command=o3)
+              b4.place(x=530,y=430)
+             
+
+         b2=tkinter.Button(t1,text="ENGLISH",bg="brown",width=10,height=4,command=o2)
+         b2.place(x=50,y=155)
+         def o6():
+              t5=tkinter.Toplevel()
+              t5.title("MYSHOW CITY")
+              t5.geometry("600x500+120+120")
+              t5.configure(background="yellow")
+              l3=tkinter.Label(t5,text="HINDI MOVIES",bg="blue",font=fo)
+              l3.place(x=170,y=40)
+              i=tkinter.IntVar()
+              r=tkinter.Radiobutton(t5,text="STREET \nDANCER\n(3D,4 STARS)",value=6,variable=i,bg="yellow",font=f2)
+              r1=tkinter.Radiobutton(t5,text="CHHAPAAK\n(3.5 STARS)" ,value=7,variable=i,bg="yellow",font=f2)
+              r2=tkinter.Radiobutton(t5,text="JAWANI\nJANEMANN\n(4 STARS)" ,value=8,variable=i,bg="yellow",font=f2)
+              r3=tkinter.Radiobutton(t5,text="GOOD\nNEWWS\n(4.5 STARS)" ,value=9,variable=i,bg="yellow",font=f2)
+              r4=tkinter.Radiobutton(t5,text="PANGA\n(4 STARS)" ,value=10,variable=i,bg="yellow",font=f2)
+              r5=tkinter.Radiobutton(t5,text="TANHAJI:\nTHE UNSUNG\nWARRIOR\n(4 STARS)" ,value=11,variable=i,bg="yellow",font=f2)
+              r.place(x=50,y=180)
+              r1.place(x=270,y=180)
+              r2.place(x=470,y=180)
+              r3.place(x=50,y=350)
+              r4.place(x=270,y=350)
+              r5.place(x=470,y=350)
+              def o7():
+                  global s
+                  s=i.get()
+                  print('''          MOVIE:''',z[s])
+                  t6=tkinter.Toplevel()
+                  t6.title("MYSHOW SEATS")
+                  t6.geometry("300x300+120+120")
+                  t6.configure(background="orange")
+                  l4=tkinter.Label(t6,text="NUMBER OF \nSEATS",bg="purple",font=fo)
+                  l4.place(x=45,y=40)
+                  v1=[1,2,3,4,5,6,7,8,9,10]
+                  c2=tkinter.ttk.Combobox(t6,values=v1)
+                  c2.set("1")
+                  c2.place(x=80,y=200)
+                  def o8():
+                      global q
+                      global g
+                      g=int(c2.get())
+                      q=200*g
+                      print('''          NUMBER OF SEATS:''',c2.get())
+                      print('''          PRICE OF ONE TICKET: 200 rupees''')
+                      print('''          TOTAL PRICE: 200 x (NUMBER OF SEATS) :''',q,"rupees")
+                      t7=tkinter.Toplevel()
+                      t7.title("MYSHOW SEATS")
+                      t7.geometry("600x500+120+120")
+                      t7.configure(background="red")
+                      l5=tkinter.Label(t7,text="CUSTOMER'S\nINFORMATION",bg="orange",font=fo)
+                      l5.place(x=170,y=40)
+                      l6=tkinter.Label(t7,text="NAME:",bg="red",font=f2)
+                      l6.place(x=70,y=150)
+                      e=tkinter.Entry(t7,border=5)
+                      e.place(x=115,y=150)
+                      l7=tkinter.Label(t7,text="ADDRESS:",bg="red",font=f2)
+                      l7.place(x=375,y=150)
+                      e1=tkinter.Entry(t7,border=5)
+                      e1.place(x=445,y=150)
+                      l8=tkinter.Label(t7,text="MOBILE\nNUMBER:",bg="red",font=f2)
+                      l8.place(x=50,y=220)
+                      e2=tkinter.Entry(t7,border=5)
+                      e2.place(x=115,y=225)
+                      l9=tkinter.Label(t7,text="EMAIL\nADDRESS:",bg="red",font=f2)
+                      l9.place(x=45,y=295)
+                      e3=tkinter.Entry(t7,border=5)
+                      e3.place(x=115,y=300)
+                      l10=tkinter.Label(t7,text="AGE:",bg="red",font=f2)
+                      l10.place(x=75,y=375)
+                      e4=tkinter.Entry(t7,border=5)
+                      e4.place(x=115,y=375)
+                      l11=tkinter.Label(t7,text="GENDER:",bg="red",font=f2)
+                      l11.place(x=380,y=225)
+                      e5=tkinter.Entry(t7,border=5)
+                      e5.place(x=445,y=225)
+                      l12=tkinter.Label(t7,text="COUPON:",bg="red",font=f2)
+                      l12.place(x=380,y=300)
+                      e6=tkinter.Entry(t7,border=5)
+                      e6.place(x=445,y=300)
+                      l13=tkinter.Label(t7,text="VERIFICATION:",bg="red",font=f2)
+                      l13.place(x=347,y=375)
+                      e7=tkinter.Entry(t7,border=5)
+                      e7.place(x=445,y=375)
+                      l14=tkinter.Label(t7,text=z1[k],bg="blue",font=f3)
+                      l14.place(x=490,y=410)
+                      l15=tkinter.Label(t7,text="ALL FIELDS ARE COMPULSORY",bg="yellow",font=f2)
+                      l15.place(x=90,y=450)
+                      def o9():
+                          s1=e7.get()
+                          global s2
+                          s2=e6.get()
+                          if(s1!=z1[k]):
+                              messagebox.showwarning("WARNING","PLEASE CHECK THE VERIFICATION")
+                              root.withdraw()
+                          else:
+                              global x1
+                              global x2
+                              global x3
+                              global x4
+                              global x5
+                              global x6
+                              x1=e.get()
+                              x2=e1.get()
+                              x3=e2.get()
+                              x4=e3.get()
+                              x5=e4.get()
+                              x6=e5.get()
+                              print('''          NAME:''',e.get())
+                              print('''          ADDRESS:''',e1.get())
+                              print('''          MOBILE NUMBER:''',e2.get())
+                              print('''          EMAIL ADDRESS:''',e3.get())
+                              print('''          AGE:''',e4.get())
+                              print('''          GENDER:''',e5.get())
+                              print('''          COUPON:''',e6.get())
+                              root.destroy()
+                              
+                      b9=tkinter.Button(t7,text="DONE",bg="orange",command=o9)
+                      b9.place(x=530,y=450)
+                      
+                      
+                      
+                  b8=tkinter.Button(t6,text="NEXT",bg="purple",command=o8)
+                  b8.place(x=250,y=250)
+                  
+                  
+                  
+              b7=tkinter.Button(t5,text="NEXT",bg="blue",command=o7)
+              b7.place(x=530,y=430)
+
+         b3=tkinter.Button(t1,text="HINDI",bg="brown",width=10,height=4,command=o6)
+         b3.place(x=180,y=155)
+         
+         
+         
+         
+        
+    b1=tkinter.Button(t,text="NEXT",bg="red",command=o1)
+    b1.place(x=250,y=250)
+    
+    
+b=tkinter.Button(root,text="NEXT",bg="blue",command=o)
+b.place(x=250,y=250)
+root.mainloop()
+if(s2=="yes"):
+    print("          YOU ARE ELIGIBLE FOR THE EXTRA 5% DISCOUNT")
+    print("          NEW/FINAL PRICE:",q -((q*5)/100),"rupees")
+else:
+    print("          INVALID CODE")
+    print("          FINAL PRICE",q,"rupees")
+i=int()
+print("          TIMINGS AND VENUE",z3[i])
+print('''\n\nTHANKYOU FOR CHOOSING MYSHOW.RUSH TO YOUR NEAREST CINEMA HALL WITHIN 24 HOURS OF THE CONFIRMATION AT ANY OF THE TIME SLOTS MENTIONED ABOVE .PLEASE DON'T FORGET TO TAKE A SCREENSHOT OF YOUR CONFIRMATION SHEET.A GENTLE REMINDER ,PAYMENTS HAVE TO BE MADE THROUGH EITHER CASH OR PATYM AT THE MYSHOW COUNTER.WE HOPE YOUR FILM GOES WELL.LOOKING FORWARD TO SEE YOU AGIN ON THIS PLATFORM!''')
+print('''                             ---------x---------''')
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="aps",
+  database="csproject")
+print(mydb)
+mycursor = mydb.cursor()
+mycursor.execute("CREATE DATABASE IF NOT EXISTS csproject")
+mycursor.execute("CREATE TABLE IF NOT EXISTS  INFORMATION(CITY varchar(25), MOVIE varchar(25),SEATS varchar(25),NAME varchar(25),ADDRESS varchar(50),MOBILE_NUMBER varchar(25),EMAIL_ADDRESS varchar(25),AGE varchar(2),GENDER varchar(7))")
+mycursor.execute("DESC INFORMATION")
+for x in mycursor:
+  print(x)
+city=w
+movie=z[s]
+seats=g
+name=x1
+address=x2
+mobilenumber=x3
+emailaddress=x4
+age=x5
+gender=x6
+sql = "INSERT INTO INFORMATION (CITY,MOVIE,SEATS,NAME,ADDRESS,MOBILE_NUMBER,EMAIL_ADDRESS,AGE,GENDER) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+val = (city,movie,seats,name, address,mobilenumber,emailaddress,age,gender)
+mycursor.execute(sql, val)
+mydb.commit()
+mycursor.execute("SELECT * FROM INFORMATION")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+s
